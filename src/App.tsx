@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {getData} from './apiUtil/glitchCarbon.js';
-import {convertToUrlFriendly} from './apiUtil/glitchCarbon.js';
+import { getData } from './apiUtil/glitchCarbon.js';
+import { convertToUrlFriendly } from './apiUtil/glitchCarbon.js';
 import axios from 'axios';
 
 // test axios
@@ -29,7 +29,13 @@ function App() {
         >
           Learn React
         </a>
-        <button color='primary' onClick={()=>{getData(convertToUrlFriendly('Fructis Pure Clean Shampoo, Paraben-Free Silicone-Free with Aloe Extract and Vitamin E, 12.5 Fl Oz Bottle'), 'Garnier', '850')}}>
+        {/* <button color='primary' onClick={()=>{getData(convertToUrlFriendly('Fructis Pure Clean Shampoo, Paraben-Free Silicone-Free with Aloe Extract and Vitamin E, 12.5 Fl Oz Bottle'), 'Garnier', '850')}}> */}
+        <button
+          color='primary'
+          onClick={() => {
+            getData();
+          }}
+        >
           Hello World
         </button>
       </header>
