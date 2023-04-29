@@ -1,41 +1,45 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import Slider from '@mui/material/Slider';
-import PopoverMenu from './PopoverMenu';
-import ProTip from './ProTip';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import Home from './pages/Home';
+import About from './pages/About';
+import Products from './pages/Products';
+import Error from './pages/Error';
+import SharedLayout from './pages/SharedLayout';
+import SingleProduct from './pages/SingleProduct';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import ProtectedRoute from './pages/ProtectedRoute';
+import SharedProductLayout from './pages/SharedProductLayout';
 
-function Copyright() {
+function App() {
+  const [user, setUser] = useState(null);
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+
+          <Route path='products' element={<SharedProductLayout />}>
+            <Route index element={<Products />} />
+            <Route path=':productId' element={<SingleProduct />} />
+          </Route>
+
+          <Route path='login' element={<Login setUser={setUser}></Login>} />
+          <Route
+            path='dashboard'
+            element={
+              <ProtectedRoute user={user}>
+                <Dashboard user={user} />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='*' element={<Error />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default function App() {
-  return (
-    <Container maxWidth="sm">
-      <div className="my-4">
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI Create React App example with Tailwind CSS in TypeScript
-        </Typography>
-        <Slider
-          className="my-4"
-          defaultValue={30}
-          classes={{ active: 'shadow-none' }}
-          slotProps={{ thumb: { className: 'hover:shadow-none' } }}
-        />
-        <PopoverMenu />
-        <ProTip />
-        <Copyright />
-      </div>
-    </Container>
-  );
-}
+export default App;
