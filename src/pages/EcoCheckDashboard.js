@@ -102,7 +102,7 @@ export default function EcoCheckDashboard() {
             <AppNewsUpdate
               title='Items You Purchased'
               list={[...Array(3)].map((_, index) => ({
-                id: faker.datatype.uuid(),
+                id: products[index].id,
                 title: products[index].name,
                 description: products[index].price,
                 image: products[index].cover,

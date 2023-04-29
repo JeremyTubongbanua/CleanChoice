@@ -14,7 +14,7 @@ import products from '../_mock/products';
 const SingleProduct = () => {
   const { productId } = useParams();
 
-  const product = products[1];
+  const product = products[productId];
 
   return (
     <>
@@ -33,10 +33,13 @@ const SingleProduct = () => {
               title='Environmental Impact'
               subheader='(+43%) than last year'
               chartData={[
-                { label: 'Shipping Distance', value: 3 },
-                { label: 'Energy', value: 5 },
-                { label: 'Packing Waste', value: 6 },
-                { label: 'EcoCheck', value: 9 },
+                {
+                  label: 'Shipping Distance',
+                  value: product.shipping_distance,
+                },
+                { label: 'Energy', value: product.energy },
+                { label: 'Packing Waste', value: product.packing_waste },
+                { label: 'EcoCheck', value: product.eco_check },
               ]}
             />
           </Grid>
