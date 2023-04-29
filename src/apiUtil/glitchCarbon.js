@@ -18,5 +18,5 @@ export async function getData(productName, manufacturer, priceCent) {
         }
     });
 
-    console.log(response);
+    return(response);
 }
