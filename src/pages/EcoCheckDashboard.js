@@ -41,7 +41,7 @@ export default function EcoCheckDashboard() {
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={4}>
             <AppTrafficBySite
-              title='The Worst Products'
+              title='Current Impact'
               list={[...Array(6)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 name: products[index].name,

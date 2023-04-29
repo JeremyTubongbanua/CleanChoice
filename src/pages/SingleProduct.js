@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import products from '../constants/data';
+
 const SingleProduct = () => {
   const { productId } = useParams();
   const product = products.find((product) => product.id === productId);

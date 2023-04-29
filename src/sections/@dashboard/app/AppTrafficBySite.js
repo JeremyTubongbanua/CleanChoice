@@ -26,13 +26,13 @@ export default function AppTrafficBySite({ title, subheader, list, ...other }) {
       <CardHeader title={title} subheader={subheader} />
 
       <Grid container spacing={3}>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <CardHeader title={'Yours'} />
         </Grid>
-        <Grid item xs={4}>
+        {/* <Grid item xs={4}>
           <CardHeader title={'vs.'} />
-        </Grid>
-        <Grid item xs={4}>
+        </Grid> */}
+        <Grid item xs={6}>
           <CardHeader title={'Theirs'} />
         </Grid>
       </Grid>

@@ -10,6 +10,7 @@ import Page404 from '../pages/Page404';
 import ProductsPage from '../pages/ProductsPage';
 // import DashboardAppPage from '../pages/DashboardAppPage';
 import EcoCheckDashboard from '../pages/EcoCheckDashboard';
+import SingleProduct from '../pages/SingleProduct';
 
 // ----------------------------------------------------------------------
 
@@ -23,6 +24,7 @@ export default function Router() {
         { path: 'app', element: <EcoCheckDashboard /> },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
+        { path: 'products/:productId', element: <SingleProduct /> },
         { path: 'blog', element: <BlogPage /> },
       ],
     },
