@@ -1,11 +1,11 @@
 [Unit]
-Description=My Python Script
+Description=Our js Script
 After=multi-user.target
 
 [Service]
 RestartSec=10
 Restart=always
-ExecStart=python3 /full/path/to/myscript.py
+ExecStart=node server.js
 
 [Install]
 WantedBy=multi-user.target
