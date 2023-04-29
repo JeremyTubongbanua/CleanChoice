@@ -29,7 +29,6 @@ const initializeWebServer = () => {
   app.listen(port, "0.0.0.0", () => {
     console.log(`Example app listening on port ${port}!`);
     console.log("http://localhost:3000");
-    console.log("http://136.159.213.152:3000");
   });
 
   app.get("/product", (req, res) => {
