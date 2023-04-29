@@ -22,9 +22,29 @@ import products from '../_mock/products';
 
 import * as React from 'react';
 
+import { useParams } from 'react-router-dom';
+
+import { useState, useEffect } from 'react';
+
 // ----------------------------------------------------------------------
 
 export default function EcoCheckDashboard() {
+  const { items } = useParams();
+
+  const [items_, setItems] = useState([]);
+
+  useEffect(() => {
+    // parse url params
+    // dashboard/app/items[]=1&items[]=2&items[]=3
+
+    const result = items.split('&').map((item) => {
+      const [key, value] = item.split('=');
+      return { [key]: value };
+    });
+    setItems(result);
+    console.log(items_);
+  }, []);
+
   const theme = useTheme();
 
   return (

@@ -21,12 +21,19 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to='/dashboard/app' />, index: true },
-        { path: 'app', element: <EcoCheckDashboard /> },
+        {
+          path: 'app',
+          element: <EcoCheckDashboard />,
+          children: [
+            { path: ':items', element: <EcoCheckDashboard /> },
+            { index: true, element: <EcoCheckDashboard /> },
+          ],
+        },
         { path: 'user', element: <UserPage /> },
         {
           path: 'products',
           children: [
-            { path: ':productId', element: <SingleProduct />  },
+            { path: ':productId', element: <SingleProduct /> },
             { index: true, element: <ProductsPage /> },
           ],
         },

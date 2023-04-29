@@ -51,8 +51,14 @@ export default function AppTrafficBySite({ title, subheader, list, ...other }) {
               variant='outlined'
               sx={{ py: 2.5, textAlign: 'center' }}
             >
-              <Box sx={{ mb: 0.5 }}>
-                <img src={site.image} alt={site.name} />
+              <Box sx={{ mb: 0.5, mx: 2 }}>
+                <img
+                  src={site.image}
+                  alt={site.name}
+                  style={{
+                    borderRadius: '10%',
+                  }}
+                />
               </Box>
 
               <Typography variant='h6'>

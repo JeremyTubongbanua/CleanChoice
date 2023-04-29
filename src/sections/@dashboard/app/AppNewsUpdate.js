@@ -102,7 +102,7 @@ function NewsItem({ news }) {
         </Link>
 
         <Typography variant='body2' sx={{ color: 'text.secondary' }} noWrap>
-          {description} hello
+          {description}
         </Typography>
       </Box>
 
