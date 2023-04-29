@@ -1,6 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+// test axios
+const testAxios = async () => {
+  const response = await axios.get(
+    'https://jsonplaceholder.typicode.com/todos/1',
+  );
+  console.log(response.data);
+};
 
 function App() {
   return (
@@ -18,7 +27,12 @@ function App() {
         >
           Learn React
         </a>
-        <button color='primary' onClick={}>
+        <button
+          color='primary'
+          onClick={() => {
+            testAxios();
+          }}
+        >
           Hello World
         </button>
       </header>
