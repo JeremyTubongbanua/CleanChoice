@@ -37,6 +37,7 @@ const initializeWebServer = () => {
     console.log(req.query);
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "*");
+    
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     // console.log(res.getHeaders());
 
