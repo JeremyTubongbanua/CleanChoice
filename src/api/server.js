@@ -35,6 +35,8 @@ const initializeWebServer = () => {
     console.log("/product");
     // console.log(req.body);
     console.log(req.query);
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
 
     const connection = mysql.createConnection(config);
     connection.connect();
@@ -52,6 +54,7 @@ const initializeWebServer = () => {
     console.log("/ecocheck");
     console.log(req.body);
     console.log(req.query);
+    res.setHeader("Access-Control-Allow-Origin", "*");
 
     const connection = mysql.createConnection(config);
     connection.connect();
