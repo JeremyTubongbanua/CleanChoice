@@ -51,13 +51,14 @@ const initializeWebServer = () => {
   app.get("/ecocheck", (req, res) => {
     console.log("/ecocheck");
     console.log(req.body);
+    console.log(req.query);
 
     const connection = mysql.createConnection(config);
     connection.connect();
     connection.query(`SELECT * FROM EcoCheck`, (err, rows, fields) => {
       for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        if (row["ProductID"] == req.body["id"]) {
+        if (row["ProductID"] == req.query["id"]) {
           res.send(row);
           break;
         }
