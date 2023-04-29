@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import {getData} from './apiUtil/glitchCarbon.js';
 import {convertToUrlFriendly} from './apiUtil/glitchCarbon.js';
+import axios from 'axios';
+
+// test axios
+const testAxios = async () => {
+  const response = await axios.get(
+    'https://jsonplaceholder.typicode.com/todos/1',
+  );
+  console.log(response.data);
+};
 
 function App() {
   return (
