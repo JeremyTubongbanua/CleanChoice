@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Button } from '@mui/material';
 // components
 import Iconify from '../components/iconify';
 // sections
@@ -26,6 +26,8 @@ import { useParams } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
+import { getProduct } from '../utils/db';
+
 // ----------------------------------------------------------------------
 
 export default function EcoCheckDashboard() {
@@ -33,16 +35,24 @@ export default function EcoCheckDashboard() {
 
   const [items_, setItems] = useState([]);
 
+  const [test_products, setTestProducts] = useState([]);
+
   useEffect(() => {
     // parse url params
     // dashboard/app/items[]=1&items[]=2&items[]=3
 
-    const result = items.split('&').map((item) => {
+    const result = items.split('&').map(async (item) => {
       const [key, value] = item.split('=');
+      // const product = await getProduct(value);
+
+      //append to test_products
+      // setTestProducts((test_products) => [...test_products, product]);
+
       return { [key]: value };
     });
     setItems(result);
-    console.log(items_);
+    console.log('Items', result);
+    // console.log('Test Products', test_products);
   }, []);
 
   const theme = useTheme();
@@ -54,6 +64,16 @@ export default function EcoCheckDashboard() {
       </Helmet>
 
       <Container maxWidth='xl'>
+        <Button
+          variant='contained'
+          color='primary'
+          onClick={() => {
+            getProduct(5);
+          }}
+        >
+          hello
+        </Button>
+
         <Typography variant='h4' sx={{ mb: 5 }}>
           Your Reciept
         </Typography>
@@ -68,6 +88,7 @@ export default function EcoCheckDashboard() {
                 name: products[index].name,
                 value: products[index].price,
                 image: products[index].cover,
+                // image: products[index].cover,
                 postedAt: faker.date.recent(),
                 id2: faker.datatype.uuid(),
                 name2: products[index + 1].name,

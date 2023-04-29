@@ -35,8 +35,6 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
     navigate('/dashboard/products');
   };
 
-  console.log(list);
-
   return (
     <Card {...other}>
       <CardHeader title={title} subheader={subheader} />

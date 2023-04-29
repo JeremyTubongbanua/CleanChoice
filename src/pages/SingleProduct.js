@@ -33,10 +33,10 @@ const SingleProduct = () => {
               title='Environmental Impact'
               subheader='(+43%) than last year'
               chartData={[
-                { label: 'Shipping', value: 3 },
-                { label: 'Packaging', value: 5 },
-                { label: 'Carbon Footprint', value: 6 },
-                { label: 'Plane Emmissions', value: 9 },
+                { label: 'Shipping Distance', value: 3 },
+                { label: 'Energy', value: 5 },
+                { label: 'Packing Waste', value: 6 },
+                { label: 'EcoCheck', value: 9 },
               ]}
             />
           </Grid>
