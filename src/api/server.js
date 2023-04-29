@@ -22,11 +22,11 @@ const config = {
 
 const initializeWebServer = () => {
   const app = express();
-  const port = 3000;
+  const port = 80;
 
   app.use(express.json());
 
-  app.listen(port, "127.0.0.1", () => {
+  app.listen(port, "0.0.0.0", () => {
     console.log(`Example app listening on port ${port}!`);
     console.log("http://localhost:3000");
     console.log("http://136.159.213.152:3000");
