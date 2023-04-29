@@ -54,7 +54,7 @@ const fetchShelves = async () => {
         element.stars = stars;
       }
 
-      items.push({title, image, link, price});
+      items.push({ title, image, link, price });
     });
 
     return items;
@@ -64,6 +64,14 @@ const fetchShelves = async () => {
 };
 
 fetchShelves().then((items) => {
-  console.log(items);
-  console.log(items.length);
+  for (var i in items) {
+    const item = items[i];
+    const split = item.price.split("$");
+    if (split.length == 3) {
+      console.log(split[1]);
+      console.log(split[2]);
+    } else {
+      console.log(item.price);
+    }
+  }
 });
