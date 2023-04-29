@@ -35,7 +35,7 @@ const initializeWebServer = () => {
     console.log("/product");
     // console.log(req.body);
     console.log(req.query);
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    // res.setHeader("Access-Control-Allow-Origin", "*");
     // res.setHeader("Access-Control-Allow-Headers", "*");
     // res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     // console.log(res.getHeaders());
@@ -56,7 +56,7 @@ const initializeWebServer = () => {
     console.log("/ecocheck");
     console.log(req.body);
     console.log(req.query);
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    // res.setHeader("Access-Control-Allow-Origin", "*");
     // res.setHeader("Access-Control-Allow-Headers", "*");
     // res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
 
