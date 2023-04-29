@@ -22,7 +22,7 @@ const config = {
 
 const initializeWebServer = () => {
   const app = express();
-  const port = 80;
+  const port = 3000;
 
   app.use(express.json());
 
