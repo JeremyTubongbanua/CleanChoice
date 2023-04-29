@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import Slider from '@mui/material/Slider';
 import PopoverMenu from '../components/PopoverMenu';
 import ProTip from '../components/ProTip';
 import { Copyright } from '../components/Copyright';
 
-export default function App() {
+const Home = () => {
   return (
     <Container maxWidth='sm'>
       <div className='my-4'>
@@ -26,4 +25,5 @@ export default function App() {
       </div>
     </Container>
   );
-}
+};
+export default Home;
