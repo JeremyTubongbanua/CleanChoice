@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as React from 'react';
 
 export const getProduct = async (id: string) => {
   // cors header access contro lallow origin
@@ -11,6 +12,6 @@ export const getProduct = async (id: string) => {
       'Content-Type': 'application/json',
     },
   });
-  console.log(response.data);
+  console.log(response);
   return response;
 };

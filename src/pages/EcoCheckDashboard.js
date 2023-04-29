@@ -43,7 +43,7 @@ export default function EcoCheckDashboard() {
 
     const result = items.split('&').map(async (item) => {
       const [key, value] = item.split('=');
-      // const product = await getProduct(value);
+      const product = products[value];
 
       //append to test_products
       // setTestProducts((test_products) => [...test_products, product]);
@@ -64,16 +64,6 @@ export default function EcoCheckDashboard() {
       </Helmet>
 
       <Container maxWidth='xl'>
-        <Button
-          variant='contained'
-          color='primary'
-          onClick={() => {
-            getProduct(5);
-          }}
-        >
-          hello
-        </Button>
-
         <Typography variant='h4' sx={{ mb: 5 }}>
           Your Reciept
         </Typography>
@@ -84,16 +74,24 @@ export default function EcoCheckDashboard() {
             <AppTrafficBySite
               title='Current Impact'
               list={[...Array(3)].map((_, index) => ({
-                id: faker.datatype.uuid(),
+                id: products[index].id,
                 name: products[index].name,
                 value: products[index].price,
                 image: products[index].cover,
+                shipping_distance: products[index].shipping_distance,
+                energy: products[index].energy,
+                packing_waste: products[index].packing_waste,
+                eco_check: products[index].eco_check,
                 // image: products[index].cover,
                 postedAt: faker.date.recent(),
-                id2: faker.datatype.uuid(),
-                name2: products[index + 1].name,
-                value2: products[index + 1].price,
-                image2: products[index + 1].cover,
+                id2: products[index + 10].id,
+                name2: products[index + 10].name,
+                value2: products[index + 10].price,
+                image2: products[index + 10].cover,
+                shipping_distance2: products[index + 10].shipping_distance,
+                energy2: products[index + 10].energy,
+                packing_waste2: products[index + 10].packing_waste,
+                eco_check2: products[index + 10].eco_check,
                 postedAt2: faker.date.recent(),
               }))}
               subheader={undefined}
@@ -103,7 +101,7 @@ export default function EcoCheckDashboard() {
           <Grid item xs={12} md={6} lg={8}>
             <AppNewsUpdate
               title='Items You Purchased'
-              list={[...Array(5)].map((_, index) => ({
+              list={[...Array(3)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 title: products[index].name,
                 description: products[index].price,
