@@ -1,43 +1,24 @@
-# Material UI - CRA example with Tailwind CSS in TypeScript
+# Clean Choice
 
-## How to use
+## Summary
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+Clean Choice is a web app that informs you on other environmentally friendly alternatives to products you purchased. Upon generating a receipt, a QR code is generated where your receipt details will inform you on the carbon footprint of your purchase and recommend other products that have a greener impact on the environment.
 
-<!-- #default-branch-switch -->
+There are multiple components to this project:
+- Web App (React, Tailwind)
+- Database (Google Cloud, MySQL)
+- API Scripts & Functions(Node.js, SerpAPI, Ditch Carbon)
+- Receipt generation (Node.js)
 
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-cra-tailwind-ts
-cd material-cra-tailwind-ts
-```
+## Sources
 
-Install it and run:
+- [Walmart Search Engine API](https://serpapi.com/walmart-search-api) for fetching Walmart product data.
+- [Amazon Web Scraping Tutorial](https://www.smashingmagazine.com/2021/10/building-amazon-product-scraper-nodejs/) for web scraping Amazon Product data.
+- [Ditch Carbon](https://ditchcarbon.com/) for fetching carbon footprint data on products.
 
-```sh
-npm install
-npm start
-```
+## Maintainers
 
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/material-cra-tailwind-ts)
-
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-cra-tailwind-ts)
-
-## The idea behind the example
-
-<!-- #default-branch-switch -->
-
-This example demonstrates how you can use [Tailwind CSS](https://tailwindcss.com/) and [Create React App](https://github.com/facebookincubator/create-react-app) together with Material UI.
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+- [TylerTrott](github.com/TylerTrott)
+- [JeremyTubongbanua](github.com/JeremyTubongbanua)
+- [Christophler](github.com/Christophler)
+- [hoomji](https://github.com/hoomji)
