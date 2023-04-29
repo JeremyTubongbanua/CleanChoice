@@ -4,7 +4,8 @@ const cheerio = require("cheerio");
 const fetchShelves = async () => {
   try {
     const response = await axios.get(
-      "https://www.amazon.com/s?k=shampoo&crid=ICG2TFJT96WP&sprefix=shampoo%2Caps%2C142&ref=nb_sb_noss_1"
+        // "https://www.amazon.com/s?k=shampoo&crid=ICG2TFJT96WP&sprefix=shampoo%2Caps%2C142&ref=nb_sb_noss_1"
+        "https://www.amazon.com/s?k=toilet+paper"
     );
 
     const html = response.data;
@@ -15,7 +16,7 @@ const fetchShelves = async () => {
 
     $(
       "div.sg-col-4-of-12.s-result-item.s-asin.sg-col-4-of-16.sg-col.sg-col-4-of-20"
-    ).each((_idx, el) => {
+    ).each(async (_idx, el) => {
       const shelf = $(el);
       const title = shelf
         .find("span.a-size-base-plus.a-color-base.a-text-normal")
@@ -54,6 +55,11 @@ const fetchShelves = async () => {
         element.stars = stars;
       }
 
+      // get description
+      // const description = await axios.get(element.link);
+      // const html = description.data;
+      // const descriptionText = $("div#feature-bullets", html).text();
+
       items.push({ title, image, link, price });
     });
 
@@ -66,12 +72,16 @@ const fetchShelves = async () => {
 fetchShelves().then((items) => {
   for (var i in items) {
     const item = items[i];
-    const split = item.price.split("$");
-    if (split.length == 3) {
-      console.log(split[1]);
-      console.log(split[2]);
-    } else {
-      console.log(item.price);
-    }
+    // title
+    // console.log(item.title);
+
+    // console.log(item.image);
+    // const split = item.price.split("$");
+    // if (split.length == 3) {
+    //   console.log(split[1]);
+    //   console.log(split[2]);
+    // } else {
+    //   console.log(item.price);
+    // }
   }
 });
