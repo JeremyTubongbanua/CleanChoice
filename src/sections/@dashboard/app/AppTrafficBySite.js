@@ -55,7 +55,9 @@ export default function AppTrafficBySite({ title, subheader, list, ...other }) {
                 <img src={site.image} alt={site.name} />
               </Box>
 
-              <Typography variant='h6'>{fShortenNumber(site.value)}</Typography>
+              <Typography variant='h6'>
+                ${fShortenNumber(site.value)}
+              </Typography>
 
               <Typography variant='body2' sx={{ color: 'text.secondary' }}>
                 {site.name}

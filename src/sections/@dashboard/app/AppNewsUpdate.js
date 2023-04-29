@@ -17,6 +17,8 @@ import Iconify from '../../../components/iconify';
 import Scrollbar from '../../../components/scrollbar';
 import { useNavigate } from 'react-router-dom';
 
+import * as React from 'react';
+
 // ----------------------------------------------------------------------
 
 AppNewsUpdate.propTypes = {
@@ -32,6 +34,8 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
     e.preventDefault();
     navigate('/dashboard/products');
   };
+
+  console.log(list);
 
   return (
     <Card {...other}>
@@ -75,9 +79,17 @@ NewsItem.propTypes = {
 function NewsItem({ news }) {
   const { image, title, description, postedAt } = news;
 
+  const navigate = useNavigate();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    navigate(`/dashboard/products/${news.id}`);
+  };
+
   return (
     <Stack direction='row' alignItems='center' spacing={2}>
       <Box
+        onClick={onSubmit}
         component='img'
         alt={title}
         src={image}
@@ -90,7 +102,7 @@ function NewsItem({ news }) {
         </Link>
 
         <Typography variant='body2' sx={{ color: 'text.secondary' }} noWrap>
-          {description}
+          {description} hello
         </Typography>
       </Box>
 

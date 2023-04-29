@@ -23,8 +23,13 @@ export default function Router() {
         { element: <Navigate to='/dashboard/app' />, index: true },
         { path: 'app', element: <EcoCheckDashboard /> },
         { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
-        { path: 'products/:productId', element: <SingleProduct /> },
+        {
+          path: 'products',
+          children: [
+            { path: ':productId', element: <SingleProduct />  },
+            { index: true, element: <ProductsPage /> },
+          ],
+        },
         { path: 'blog', element: <BlogPage /> },
       ],
     },
