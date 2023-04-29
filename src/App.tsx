@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import Slider from '@mui/material/Slider';
+import PopoverMenu from './PopoverMenu';
+import ProTip from './ProTip';
 
-function App() {
+function Copyright() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Typography variant="body2" color="text.secondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Container maxWidth="sm">
+      <div className="my-4">
+        <Typography variant="h4" component="h1" gutterBottom>
+          Material UI Create React App example with Tailwind CSS in TypeScript
+        </Typography>
+        <Slider
+          className="my-4"
+          defaultValue={30}
+          classes={{ active: 'shadow-none' }}
+          slotProps={{ thumb: { className: 'hover:shadow-none' } }}
+        />
+        <PopoverMenu />
+        <ProTip />
+        <Copyright />
+      </div>
+    </Container>
+  );
+}
