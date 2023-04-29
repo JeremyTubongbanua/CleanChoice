@@ -1,5 +1,5 @@
 
-var url = `http://www.google.com`; // TODO change later
+var url = `http://www.eco-check-coral.vercel.app/dashboard/app/`; // TODO change later
 
 
 
@@ -12,7 +12,10 @@ function main() {
 
     // 1. append url
     for (let i = 0; i < productIds.length; i++) {
-        url += `&productIds[]=${productIds[i]}`;
+        url += `items[]=${productIds[i]}`;
+        if(i >= 0 && i != productIds.length - 1) {
+            url += `&`;
+        }
     }
 
     console.log(url);
