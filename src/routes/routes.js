@@ -10,6 +10,7 @@ import Page404 from '../pages/Page404';
 import ProductsPage from '../pages/ProductsPage';
 // import DashboardAppPage from '../pages/DashboardAppPage';
 import EcoCheckDashboard from '../pages/EcoCheckDashboard';
+import SingleProduct from '../pages/SingleProduct';
 
 // ----------------------------------------------------------------------
 
@@ -20,9 +21,22 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to='/dashboard/app' />, index: true },
-        { path: 'app', element: <EcoCheckDashboard /> },
+        {
+          path: 'app',
+          element: <EcoCheckDashboard />,
+          children: [
+            { path: ':items', element: <EcoCheckDashboard /> },
+            { index: true, element: <EcoCheckDashboard /> },
+          ],
+        },
         { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
+        {
+          path: 'products',
+          children: [
+            { path: ':productId', element: <SingleProduct /> },
+            { index: true, element: <ProductsPage /> },
+          ],
+        },
         { path: 'blog', element: <BlogPage /> },
       ],
     },

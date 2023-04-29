@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Stack, AppBar, Toolbar, IconButton } from '@mui/material';
+import {
+  Box,
+  Stack,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+} from '@mui/material';
 // utils
 import { bgBlur } from '../../../utils/cssStyles';
 // components
@@ -54,23 +61,23 @@ export default function Header({ onOpenNav }) {
             display: { lg: 'none' },
           }}
         >
-          <Iconify icon="eva:menu-2-fill" />
+          <Iconify icon='eva:menu-2-fill' />
         </IconButton>
 
         <Searchbar />
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack
-          direction="row"
-          alignItems="center"
+          direction='row'
+          alignItems='center'
           spacing={{
             xs: 0.5,
             sm: 1,
           }}
         >
-          <LanguagePopover />
-          <NotificationsPopover />
-          <AccountPopover />
+          {/* <LanguagePopover /> */}
+          {/* <NotificationsPopover /> */}
+          {/* <AccountPopover /> */}
         </Stack>
       </StyledToolbar>
     </StyledRoot>
