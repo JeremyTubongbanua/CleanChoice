@@ -101,7 +101,7 @@ export default function AppTrafficBySite({ title, subheader, list, ...other }) {
                       </Typography>
 
                       <Typography variant='h6'>
-                        {fShortenNumber(site.value)}%
+                        {fShortenNumber(site.eco_check)}% overall eco
                       </Typography>
                     </Grid>
                     {/* Product 2 */}
@@ -128,12 +128,13 @@ export default function AppTrafficBySite({ title, subheader, list, ...other }) {
                       </Typography>
 
                       <Typography variant='h6'>
-                        {fShortenNumber(site.value2)}%
+                        {fShortenNumber(site.eco_check2)}% overall eco
                       </Typography>
                     </Grid>
                   </Grid>
                   <Typography variant='body2'>
-                    {site.name2} is 35% more eco-friendly than {site.name}.
+                    {site.name2} is {site.eco_check2 - site.eco_check}% more
+                    eco-friendly than {site.name}.
                   </Typography>
                 </Stack>
               </Paper>
