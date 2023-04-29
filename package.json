@@ -39,6 +39,7 @@
     "@types/react-dom": "latest",
     "apexcharts": "^3.37.0",
     "autoprefixer": "latest",
+    "axios": "^1.4.0",
     "change-case": "^4.1.2",
     "date-fns": "^2.29.3",
     "firebase": "^9.21.0",
