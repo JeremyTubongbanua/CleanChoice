@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {getData} from './apiUtil/glitchCarbon.js';
+import {convertToUrlFriendly} from './apiUtil/glitchCarbon.js';
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
         >
           Learn React
         </a>
-        <button color='primary' onClick={}>
+        <button color='primary' onClick={()=>{getData(convertToUrlFriendly('Fructis Pure Clean Shampoo, Paraben-Free Silicone-Free with Aloe Extract and Vitamin E, 12.5 Fl Oz Bottle'), 'Garnier', '850')}}>
           Hello World
         </button>
       </header>
