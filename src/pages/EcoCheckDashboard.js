@@ -60,13 +60,20 @@ export default function EcoCheckDashboard() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={4}>
+            {/* Current Impact */}
             <AppTrafficBySite
               title='Current Impact'
-              list={[...Array(6)].map((_, index) => ({
+              list={[...Array(3)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 name: products[index].name,
                 value: products[index].price,
                 image: products[index].cover,
+                postedAt: faker.date.recent(),
+                id2: faker.datatype.uuid(),
+                name2: products[index + 1].name,
+                value2: products[index + 1].price,
+                image2: products[index + 1].cover,
+                postedAt2: faker.date.recent(),
               }))}
               subheader={undefined}
             />
